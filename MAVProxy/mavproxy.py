@@ -812,7 +812,7 @@ def process_master(m):
             sys.stdout.write(str(s))
         sys.stdout.flush()
         return
-    
+
     global mavversion
     if m.first_byte and mavversion is None:
         m.auto_mavlink_version(s)
@@ -1195,7 +1195,7 @@ def run_script(scriptfile):
             mpstate.console.writeln("-> %s" % line)
         process_stdin(line)
     f.close()
-    
+
 def set_mav_version(mav10, mav20, autoProtocol, mavversionArg):
     '''Set the Mavlink version based on commandline options'''
 #    if(mav10 == True or mav20 == True or autoProtocol == True):
@@ -1420,7 +1420,7 @@ if __name__ == '__main__':
     if opts.state_basedir is not None:
         mpstate.settings.state_basedir = opts.state_basedir
 
-    msg_period = mavutil.periodic_event(1.0/15)
+    msg_period = mavutil.periodic_event(1.0/150)
     heartbeat_period = mavutil.periodic_event(1)
     heartbeat_check_period = mavutil.periodic_event(0.33)
 
